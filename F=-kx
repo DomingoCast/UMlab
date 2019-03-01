@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+n=50
+tf =50
+dt = tf/n
+k=1
+m=10
+a = -(k/m)*dt**2
+t = np.linspace(0,tf,n)
+
+x = [0 for i in range (n)]
+
+x[0] = 10
+v0= 0
+x[1]= x[0] + v0*dt
+
+for i in range (n):
+    x[i]= (2-a)*x[i-1]-x[i-2]
+    
+plt.plot(x,t)
+plt.show()
+    
